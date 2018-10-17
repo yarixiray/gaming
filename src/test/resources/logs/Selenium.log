@@ -1,7 +1,6 @@
-17:36:02,451 DEBUG devpinoyLogger:44 - Config file loaded !!!
-17:36:02,459 DEBUG devpinoyLogger:56 - OR file loaded !!!
-17:36:08,826 DEBUG devpinoyLogger:64 - Chrome Launched !!!
-17:36:14,254 DEBUG devpinoyLogger:72 - Navigated to : http://comedy-radio.ru/
-17:36:15,536 DEBUG devpinoyLogger:13 - First TEST !!!
-17:36:18,692 DEBUG devpinoyLogger:16 - Login successfully executed
-17:36:20,047 DEBUG devpinoyLogger:93 - Test execution completed !!!
+00:58:00,750 DEBUG devpinoyLogger:44 - Config file loaded !!!
+00:58:00,757 DEBUG devpinoyLogger:56 - OR file loaded !!!
+00:58:08,375 DEBUG devpinoyLogger:64 - Chrome Launched !!!
+00:58:11,498 DEBUG devpinoyLogger:72 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
+00:58:13,245 DEBUG devpinoyLogger:21 - First TEST !!!
+00:58:51,658 DEBUG devpinoyLogger:93 - Test execution completed !!!
