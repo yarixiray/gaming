@@ -1,0 +1,7 @@
+17:15:59,720 DEBUG devinoyLogger:42 - Config file loaded !!!
+17:15:59,724 DEBUG devinoyLogger:54 - OR file loaded !!!
+17:16:04,697 DEBUG devinoyLogger:62 - Chrome Launched !!!
+17:16:08,676 DEBUG devinoyLogger:70 - Navigated to : http://comedy-radio.ru/
+17:16:09,890 DEBUG devinoyLogger:11 - First TEST !!!
+17:16:11,362 DEBUG devinoyLogger:13 - Login successfully executed
+17:16:12,597 DEBUG devinoyLogger:82 - Test execution completed !!!
