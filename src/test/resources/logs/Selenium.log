@@ -1,7 +1,7 @@
-17:28:37,878 DEBUG devpinoyLogger:44 - Config file loaded !!!
-17:28:37,881 DEBUG devpinoyLogger:56 - OR file loaded !!!
-17:28:44,205 DEBUG devpinoyLogger:64 - Chrome Launched !!!
-17:28:49,246 DEBUG devpinoyLogger:72 - Navigated to : http://comedy-radio.ru/
-17:28:50,522 DEBUG devpinoyLogger:12 - First TEST !!!
-17:28:52,661 DEBUG devpinoyLogger:15 - Login successfully executed
-17:28:54,556 DEBUG devpinoyLogger:93 - Test execution completed !!!
+17:36:02,451 DEBUG devpinoyLogger:44 - Config file loaded !!!
+17:36:02,459 DEBUG devpinoyLogger:56 - OR file loaded !!!
+17:36:08,826 DEBUG devpinoyLogger:64 - Chrome Launched !!!
+17:36:14,254 DEBUG devpinoyLogger:72 - Navigated to : http://comedy-radio.ru/
+17:36:15,536 DEBUG devpinoyLogger:13 - First TEST !!!
+17:36:18,692 DEBUG devpinoyLogger:16 - Login successfully executed
+17:36:20,047 DEBUG devpinoyLogger:93 - Test execution completed !!!
