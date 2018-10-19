@@ -1,5 +1,7 @@
 package base;
 
+import com.relevantcodes.extentreports.ExtentReports;
+import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import utilities.ExtentManager;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -29,7 +32,8 @@ public class TestBase {
     public static Properties OR = new Properties();
     public static FileInputStream fis;
     public static Logger log = Logger.getLogger("devpinoyLogger");
-
+    public static ExtentTest test;
+    public ExtentReports rep = ExtentManager.getInstance();
 
     @BeforeSuite
     public void setUp() {

@@ -1,0 +1,6 @@
+00:58:00,750 DEBUG devpinoyLogger:44 - Config file loaded !!!
+00:58:00,757 DEBUG devpinoyLogger:56 - OR file loaded !!!
+00:58:08,375 DEBUG devpinoyLogger:64 - Chrome Launched !!!
+00:58:11,498 DEBUG devpinoyLogger:72 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
+00:58:13,245 DEBUG devpinoyLogger:21 - First TEST !!!
+00:58:51,658 DEBUG devpinoyLogger:93 - Test execution completed !!!
