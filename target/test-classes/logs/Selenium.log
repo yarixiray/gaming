@@ -1,6 +1,8 @@
-00:58:00,750 DEBUG devpinoyLogger:44 - Config file loaded !!!
-00:58:00,757 DEBUG devpinoyLogger:56 - OR file loaded !!!
-00:58:08,375 DEBUG devpinoyLogger:64 - Chrome Launched !!!
-00:58:11,498 DEBUG devpinoyLogger:72 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
-00:58:13,245 DEBUG devpinoyLogger:21 - First TEST !!!
-00:58:51,658 DEBUG devpinoyLogger:93 - Test execution completed !!!
+00:31:58,396 DEBUG devpinoyLogger:46 - Config file loaded !!!
+00:31:58,396 DEBUG devpinoyLogger:58 - OR file loaded !!!
+00:32:02,565 DEBUG devpinoyLogger:66 - Chrome Launched !!!
+00:32:08,011 DEBUG devpinoyLogger:74 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
+00:32:10,294 DEBUG devpinoyLogger:19 - First TEST !!!
+00:32:10,424 DEBUG devpinoyLogger:21 - cookieAccept !!!
+00:32:10,683 DEBUG devpinoyLogger:23 - iframe__playbutton !!!
+00:32:11,718 DEBUG devpinoyLogger:25 - age-notice-iframe-yes !!!

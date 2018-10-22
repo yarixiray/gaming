@@ -3,7 +3,6 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,7 +13,6 @@ import utilities.ExtentManager;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -79,31 +77,6 @@ public class TestBase {
             driver.manage().deleteAllCookies();
         }
 
-    }
-
-    public boolean isElementPresent(By by) {
-        try {
-            driver.findElement(by);
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
-    public int findFrameNumber(By by) {
-        int i;
-        int frameCount = driver.findElements(by).size();
-        for (i = 0; i < frameCount; i++) {
-            driver.switchTo().frame(i);
-            int count = driver.findElements(by).size();
-            if (count > 0) {
-                break;
-            } else {
-                System.out.println("Continue looping !!!");
-            }
-        }
-        driver.switchTo().defaultContent();
-        return i;
     }
 
     @AfterSuite
