@@ -76,6 +76,7 @@ public class TestBase {
             log.debug("Navigated to : " + config.getProperty("testsiteurl"));
             driver.manage().window().maximize();
             driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicit.wait")), TimeUnit.SECONDS);
+            driver.manage().deleteAllCookies();
         }
 
     }
@@ -87,6 +88,22 @@ public class TestBase {
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+
+    public int findFrameNumber(By by) {
+        int i;
+        int frameCount = driver.findElements(by).size();
+        for (i = 0; i < frameCount; i++) {
+            driver.switchTo().frame(i);
+            int count = driver.findElements(by).size();
+            if (count > 0) {
+                break;
+            } else {
+                System.out.println("Continue looping !!!");
+            }
+        }
+        driver.switchTo().defaultContent();
+        return i;
     }
 
     @AfterSuite
