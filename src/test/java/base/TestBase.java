@@ -3,27 +3,27 @@ package base;
 import com.relevantcodes.extentreports.ExtentReports;
 import com.relevantcodes.extentreports.ExtentTest;
 import org.apache.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import utilities.ExtentManager;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class TestBase {
-
-    /*
-    WebDriver
-    Properties
-    Logs
-    ExtendReports
-     */
 
     public static WebDriver driver;
     public static Properties config = new Properties();
@@ -31,9 +31,9 @@ public class TestBase {
     public static FileInputStream fis;
     public static Logger log = Logger.getLogger("devpinoyLogger");
     public static ExtentTest test;
-    public ExtentReports rep = ExtentManager.getInstance();
+    public static ExtentReports rep = ExtentManager.getInstance();
 
-    @BeforeSuite
+    @BeforeClass
     public void setUp() {
         if (driver == null) {
             try {
@@ -60,11 +60,11 @@ public class TestBase {
                 e.printStackTrace();
             }
 
-            if (config.getProperty("browser").equals("chrome")) {
+            if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
                 driver = new ChromeDriver();
                 log.debug("Chrome Launched !!!");
-            } else if (config.getProperty("browser").equals("firefox")) {
+            } else if (config.getProperty("browser").equalsIgnoreCase("firefox")) {
                 System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 log.debug("Firefox Launched !!!");
@@ -79,7 +79,49 @@ public class TestBase {
 
     }
 
-    @AfterSuite
+    public void clickOn(String value) {
+        WebDriverWait wait = new WebDriverWait(driver, 80);
+        if (value.endsWith("_xpath")) {
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(value))));
+            driver.findElement(By.xpath(OR.getProperty(value))).click();
+        } else if (value.endsWith("_id")) {
+            wait.until(ExpectedConditions.elementToBeClickable(By.id(OR.getProperty(value))));
+            driver.findElement(By.id(OR.getProperty(value))).click();
+        }
+        log.debug("The button " + value + " is found and clicked");
+    }
+
+    public void switchToFrame(String attributeValue) {
+        driver.switchTo().frame(driver.findElement(By.xpath(OR.getProperty(attributeValue))));
+        log.debug("Switch To Frame: " + attributeValue);
+    }
+
+    public void takeFreePlace(String attrValue) {
+        WebDriverWait wait = new WebDriverWait(driver, 80);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
+        List<WebElement> freePlaces = new ArrayList();
+        freePlaces = driver.findElements(By.xpath(OR.getProperty(attrValue)));
+        freePlaces.get(0).click();
+    }
+
+    public void verifyNotificationMessage(String attrValue, String happyMessage, String sadMessage) {
+        WebDriverWait waitMessage = new WebDriverWait(driver, 80);
+        waitMessage.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
+
+        if (driver.findElement(By.xpath(OR.getProperty(attrValue))).getText()
+                .equalsIgnoreCase(OR.getProperty(happyMessage))) {
+            Assert.assertEquals(driver.findElement(By.xpath(OR.getProperty(attrValue))).getText(), happyMessage);
+            log.debug(happyMessage);
+        } else if (driver.findElement(By.xpath(OR.getProperty(attrValue))).getText()
+                .equalsIgnoreCase(OR.getProperty(sadMessage))) {
+            Assert.assertEquals(driver.findElement(By.xpath(OR.getProperty(attrValue))).getText(), sadMessage);
+            log.debug(sadMessage);
+        } else {
+            log.debug("Your result is " + driver.findElement(By.xpath(OR.getProperty(attrValue))).getText());
+        }
+    }
+
+    @AfterClass
     public void tearDown() {
         if (driver != null) {
             driver.quit();

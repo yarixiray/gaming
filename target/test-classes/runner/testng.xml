@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="yggdrasil">
+<suite name="yggdrasilgaming">
     <listeners>
         <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
         <listener class-name="listeners.CustomListeners"></listener>
     </listeners>
-    <test name="FirstTest">
+    <test name="PlayTest">
         <classes>
-            <class name="testcases.FirstTest"/>
+            <class name="testcases.SitPlayerAndPlayTest"/>
         </classes>
     </test>
 </suite>

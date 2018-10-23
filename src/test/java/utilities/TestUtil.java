@@ -11,7 +11,6 @@ import java.util.Date;
 
 public class TestUtil extends TestBase {
 
-    public static String screenshotPath;
     public static String screenshotName;
 
     public static void captureScreenshot() throws IOException {

@@ -1,8 +1,10 @@
-00:31:58,396 DEBUG devpinoyLogger:46 - Config file loaded !!!
-00:31:58,396 DEBUG devpinoyLogger:58 - OR file loaded !!!
-00:32:02,565 DEBUG devpinoyLogger:66 - Chrome Launched !!!
-00:32:08,011 DEBUG devpinoyLogger:74 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
-00:32:10,294 DEBUG devpinoyLogger:19 - First TEST !!!
-00:32:10,424 DEBUG devpinoyLogger:21 - cookieAccept !!!
-00:32:10,683 DEBUG devpinoyLogger:23 - iframe__playbutton !!!
-00:32:11,718 DEBUG devpinoyLogger:25 - age-notice-iframe-yes !!!
+23:43:56,902 DEBUG devpinoyLogger:46 - Config file loaded !!!
+23:43:56,917 DEBUG devpinoyLogger:58 - OR file loaded !!!
+23:44:01,218 DEBUG devpinoyLogger:66 - Chrome Launched !!!
+23:44:04,457 DEBUG devpinoyLogger:74 - Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
+23:44:06,414 DEBUG devpinoyLogger:11 - blackJackSonyaTest is started
+23:44:06,655 DEBUG devpinoyLogger:91 - The button cookieAcceptBtn_id is found and clicked
+23:44:06,995 DEBUG devpinoyLogger:91 - The button playBtn_id is found and clicked
+23:44:08,122 DEBUG devpinoyLogger:91 - The button ageNoticeYesBtn_id is found and clicked
+23:44:08,124 DEBUG devpinoyLogger:22 - blackJackSonyaTest successfully executed
+23:44:10,017 DEBUG devpinoyLogger:129 - Test execution completed !!!

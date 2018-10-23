@@ -8,6 +8,6 @@
   <properties />
   
   
-            <testcase name="pushButton" time="3.158" classname="testcases.FirstTest" />
+            <testcase name="pushButton" time="3.158" classname="testcases.SitPlayerAndPlayTest" />
       
 </testsuite>
