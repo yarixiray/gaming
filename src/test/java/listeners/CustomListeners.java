@@ -2,15 +2,17 @@ package listeners;
 
 import base.TestBase;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.*;
+import org.testng.ITestContext;
+import org.testng.ITestListener;
+import org.testng.ITestResult;
+import org.testng.Reporter;
 import utilities.TestUtil;
 
 import java.io.IOException;
 
-public class CustomListeners extends TestBase implements ITestListener, ISuiteListener {
+public class CustomListeners extends TestBase implements ITestListener {
 
     public void onTestStart(ITestResult iTestResult) {
-
     }
 
     public void onTestSuccess(ITestResult arg0) {
@@ -42,26 +44,15 @@ public class CustomListeners extends TestBase implements ITestListener, ISuiteLi
     }
 
     public void onTestSkipped(ITestResult iTestResult) {
-
     }
 
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-
     }
 
     public void onStart(ITestContext iTestContext) {
-
     }
 
     public void onFinish(ITestContext iTestContext) {
-
     }
 
-    public void onStart(ISuite iSuite) {
-
-    }
-
-    public void onFinish(ISuite arg0) {
-
-    }
 }

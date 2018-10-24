@@ -32,7 +32,7 @@ public class TestBase {
     public static Logger log = Logger.getLogger("devpinoyLogger");
     public static ExtentTest test;
     public static ExtentReports rep = ExtentManager.getInstance();
-    public static List<WebElement> freePlaces = new ArrayList();
+    public static List<WebElement> freePlaces = new ArrayList<WebElement>();
 
     @BeforeSuite
     public void setUp() {
@@ -61,11 +61,11 @@ public class TestBase {
                 e.printStackTrace();
             }
 
-            if (config.getProperty("browser").equalsIgnoreCase("chrome")) {
+            if (config.getProperty("browser").equals("chrome")) {
                 System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\chromedriver.exe");
                 driver = new ChromeDriver();
                 log.debug("Chrome Launched !!!");
-            } else if (config.getProperty("browser").equalsIgnoreCase("firefox")) {
+            } else if (config.getProperty("browser").equals("firefox")) {
                 System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") + "\\src\\test\\resources\\executables\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 log.debug("Firefox Launched !!!");
@@ -98,17 +98,20 @@ public class TestBase {
     }
 
     public void takeFreePlace(String attrValue) {
-        WebDriverWait wait = new WebDriverWait(driver, 80);
-        wait.until(ExpectedConditions.elementToBeSelected(By.xpath(OR.getProperty(attrValue))));
+        WebDriverWait waitFp = new WebDriverWait(driver, 80);
+        waitFp.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
         freePlaces = driver.findElements(By.xpath(OR.getProperty(attrValue)));
-        freePlaces.get(0).click();
-        log.debug("Sit on free place");
+        if (freePlaces.size() > 0) {
+            freePlaces.get(0).click();
+            log.debug("Sit on free place");
+        } else {
+            log.debug("All places are reserved !");
+        }
     }
 
     public void verifyNotificationMessage(String attrValue, String happyMessage, String sadMessage) {
-        WebDriverWait waitMessage = new WebDriverWait(driver, 80);
-        waitMessage.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
-
+        WebDriverWait waitNm = new WebDriverWait(driver, 80);
+        waitNm.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
         if (driver.findElement(By.xpath(OR.getProperty(attrValue))).getText()
                 .equalsIgnoreCase(OR.getProperty(happyMessage))) {
             Assert.assertEquals(driver.findElement(By.xpath(OR.getProperty(attrValue))).getText(), happyMessage);
@@ -125,7 +128,6 @@ public class TestBase {
     @AfterSuite
     public void tearDown() {
         if (driver != null) {
-            driver.close();
             driver.quit();
         }
         log.debug("Test execution completed !!!");

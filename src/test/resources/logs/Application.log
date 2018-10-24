@@ -1,9 +1,16 @@
-24/10/2018 21:38:29 devpinoyLogger Config file loaded !!!
-24/10/2018 21:38:29 devpinoyLogger OR file loaded !!!
-24/10/2018 21:38:33 devpinoyLogger Chrome Launched !!!
-24/10/2018 21:38:41 devpinoyLogger Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
-24/10/2018 21:38:43 devpinoyLogger blackJackSonyaTest is started
-24/10/2018 21:38:43 devpinoyLogger The button cookieAcceptBtn_id is found and clicked
-24/10/2018 21:38:43 devpinoyLogger The button playBtn_id is found and clicked
-24/10/2018 21:38:44 devpinoyLogger The button ageNoticeYesBtn_id is found and clicked
-24/10/2018 21:38:44 devpinoyLogger Switch To Frame: iFrame_xpath
+25/10/2018 00:53:52 devpinoyLogger Config file loaded !!!
+25/10/2018 00:53:52 devpinoyLogger OR file loaded !!!
+25/10/2018 00:53:58 devpinoyLogger Chrome Launched !!!
+25/10/2018 00:54:05 devpinoyLogger Navigated to : https://yggdrasilgaming.com/games/sonya-blackjack/
+25/10/2018 00:54:10 devpinoyLogger blackJackSonyaTest is started
+25/10/2018 00:54:11 devpinoyLogger The button cookieAcceptBtn_id is found and clicked
+25/10/2018 00:54:11 devpinoyLogger The button playBtn_id is found and clicked
+25/10/2018 00:54:11 devpinoyLogger The button ageNoticeYesBtn_id is found and clicked
+25/10/2018 00:54:12 devpinoyLogger Switch To Frame: iFrame_xpath
+25/10/2018 00:54:38 devpinoyLogger Sit on free place
+25/10/2018 00:54:39 devpinoyLogger The button betAmount_id is found and clicked
+25/10/2018 00:54:40 devpinoyLogger The button dealBtn_xpath is found and clicked
+25/10/2018 00:55:06 devpinoyLogger Your result is YOU WIN ˆ125.00
+25/10/2018 00:55:06 devpinoyLogger The button leaveSeatBtn_xpath is found and clicked
+25/10/2018 00:55:06 devpinoyLogger blackJackSonyaTest successfully executed
+25/10/2018 00:55:08 devpinoyLogger Test execution completed !!!
