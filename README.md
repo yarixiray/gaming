@@ -1,8 +1,8 @@
-#Properties: 
+# Properties: 
 - Config.properties: browser: chrome (or firefox optional) 
 
-#Logs:
+# Logs:
 - Application.log
 
-#Run application via cmd: 
+# Run application via cmd: 
 - mvn clean install
