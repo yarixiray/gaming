@@ -11,8 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 import utilities.ExtentManager;
 
 import java.io.FileInputStream;
@@ -32,8 +32,9 @@ public class TestBase {
     public static Logger log = Logger.getLogger("devpinoyLogger");
     public static ExtentTest test;
     public static ExtentReports rep = ExtentManager.getInstance();
+    public static List<WebElement> freePlaces = new ArrayList();
 
-    @BeforeClass
+    @BeforeSuite
     public void setUp() {
         if (driver == null) {
             try {
@@ -98,10 +99,10 @@ public class TestBase {
 
     public void takeFreePlace(String attrValue) {
         WebDriverWait wait = new WebDriverWait(driver, 80);
-        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(OR.getProperty(attrValue))));
-        List<WebElement> freePlaces = new ArrayList();
+        wait.until(ExpectedConditions.elementToBeSelected(By.xpath(OR.getProperty(attrValue))));
         freePlaces = driver.findElements(By.xpath(OR.getProperty(attrValue)));
         freePlaces.get(0).click();
+        log.debug("Sit on free place");
     }
 
     public void verifyNotificationMessage(String attrValue, String happyMessage, String sadMessage) {
@@ -121,9 +122,10 @@ public class TestBase {
         }
     }
 
-    @AfterClass
+    @AfterSuite
     public void tearDown() {
         if (driver != null) {
+            driver.close();
             driver.quit();
         }
         log.debug("Test execution completed !!!");

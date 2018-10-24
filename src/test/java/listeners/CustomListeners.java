@@ -2,17 +2,19 @@ package listeners;
 
 import base.TestBase;
 import com.relevantcodes.extentreports.LogStatus;
-import org.testng.ITestListener;
-import org.testng.ITestResult;
-import org.testng.Reporter;
+import org.testng.*;
 import utilities.TestUtil;
 
 import java.io.IOException;
 
-public class CustomListeners extends TestBase implements ITestListener {
+public class CustomListeners extends TestBase implements ITestListener, ISuiteListener {
+
+    public void onTestStart(ITestResult iTestResult) {
+
+    }
 
     public void onTestSuccess(ITestResult arg0) {
-        TestBase.test.log(LogStatus.PASS, arg0.getName().toUpperCase() + "PASS");
+        test.log(LogStatus.PASS, arg0.getName().toUpperCase() + "PASS");
         rep.endTest(test);
         rep.flush();  //generate report
     }
@@ -37,5 +39,29 @@ public class CustomListeners extends TestBase implements ITestListener {
         Reporter.log("<a target=\"_blank\" href=" + TestUtil.screenshotName + "><img src=" + TestUtil.screenshotName + " height=200 width=200></img></a>");
         rep.endTest(test);
         rep.flush();  //generate report
+    }
+
+    public void onTestSkipped(ITestResult iTestResult) {
+
+    }
+
+    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+
+    }
+
+    public void onStart(ITestContext iTestContext) {
+
+    }
+
+    public void onFinish(ITestContext iTestContext) {
+
+    }
+
+    public void onStart(ISuite iSuite) {
+
+    }
+
+    public void onFinish(ISuite arg0) {
+
     }
 }

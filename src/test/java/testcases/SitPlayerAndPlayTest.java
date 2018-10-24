@@ -12,13 +12,13 @@ public class SitPlayerAndPlayTest extends TestBase {
         clickOn("cookieAcceptBtn_id");
         clickOn("playBtn_id");
         clickOn("ageNoticeYesBtn_id");
-//        switchToFrame("iFrame_xpath");
-//        takeFreePlace("joinAndTakeFreePlaceBtn_xpath");
-//        clickOn("betAmount_id");
-//        clickOn("dealBtn_xpath");
-//        verifyNotificationMessage("messageNotification_xpath",
-//                "happyMessage", "sadMessage");
-//        clickOn("leaveSeatBtn_xpath");
+        switchToFrame("iFrame_xpath");
+        takeFreePlace("joinAndTakeFreePlaceBtn_xpath");
+        clickOn("betAmount_id");
+        clickOn("dealBtn_xpath");
+        verifyNotificationMessage("messageNotification_xpath",
+                "happyMessage", "sadMessage");
+        clickOn("leaveSeatBtn_xpath");
         log.debug("blackJackSonyaTest successfully executed");
         Reporter.log("Login successfully executed");
     }
